@@ -1,4 +1,10 @@
+import { MaxLength, MinLength } from 'class-validator';
+
 export class AddTodoDto {
-    public title: string;
-    public description: string;
+    @MinLength(15)
+    @MaxLength(150)
+    title: string;
+
+    @MaxLength(500)
+    description: string;
 }
